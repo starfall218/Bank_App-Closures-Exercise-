@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    main {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+    }
+    .main {
+      margin: auto;
+      width: 90%;
+      height: 93vh;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .main, .dialogue-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image {
+      width: 70%;
+    }
+    img {
+      width: 100%;
+    }
+    a {
+      text-decoration: none;
+    }
+    .dialogue-box {
+      width: 100%;
+      flex-direction: column;
+      position: relative;
+    }
+    .center-box {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .history {
+      display: none;
+      height: 10%;
+      overflow: scroll;
+    }
+    .history::-webkit-scrollbar {
+      display: none;
+    }
+    input {
+      padding: 10px;
+      margin-bottom: 5px;
+    }
+    .button {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 6px;
+    }
+    button {
+      font-size: 15px;
+      font-weight: 600;
+      padding: 10px 13px;
+      background-color: rgb(154, 167, 243);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in;
+    }
+    button:hover {
+      color: black;
+      background-color: rgb(139, 153, 235);
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    img {
+      width: 100%;
+    }
+    .toparea {
+      width: 100%;
+    }
+    .question {
+      opacity: 1;
+      transition: all 0.15s ease-in-out;
+    }
+    .input-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media screen and (min-width: 750px) {
+      .main {
+        width: 50%;
+        border: 1px solid gainsboro;
+        box-shadow: inset 0.3px 0 0 goldenrod;
+        border-radius: 10px;
+      }
+      .image {
+        width: 40%;
+      }
+      .input-box {
+        flex-direction: row;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="main">
+      <div class="center-box">
+        <div class="dialogue-box">
+          <div class="image">
+            <img src="./images/pngs/627cca9b1b2e263b45696aa1.png" alt="">
+          </div>
+          <div class="image">
+            <img src="./images/jpg/6927930.jpg" alt="">
+          </div>
+          <h1 class="dialogue">Hi</h1>
+        </div>
+      </div>
+      <div class="history"></div>
+      <div class="input-box">
+        <input placeholder="Enter your account balance..." class="balance" required type="text">
+      <input placeholder="Enter the amount you need..." class="num-oper" required type="text">
+      </div>
+      <div class="button">
+        <button class="debit">Debit</button>
+        <button class="credit">Credit</button>
+      </div>
+      <button><a href="./index.html">Log Out</a></button>
+    </section>
+  </main>
+  <script src="./js/bnk.js"></script>
+</body>
+</html>
