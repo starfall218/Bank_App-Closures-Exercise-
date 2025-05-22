@@ -15,4 +15,9 @@ const logName = function(){
       window.location.href = './transaction.html';
     }, 2000)
 };
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Enter') {
+    logName();
+  };
+});
 submitBtn.addEventListener('click', logName);
