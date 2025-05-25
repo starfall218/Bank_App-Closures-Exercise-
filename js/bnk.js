@@ -37,8 +37,8 @@ const bankCreation = function(currBalance){
 document.addEventListener('keydown', function(e){
   if(e.key === 'Enter'){
     let accountBalance = parseFloat(userbalance.value);
-    if(isNaN(accountBalance) || accountBalance <= 2000){
-        dialogue.textContent = 'Please enter a valid number above 2000.';
+    if(isNaN(accountBalance)){
+        dialogue.textContent = 'Please enter a valid number.';
         return;
     } else {
       user.acurrAccBalance = accountBalance;
@@ -60,7 +60,7 @@ debitBtn.addEventListener('click', function(){
     return;
   }
   if(user.accountType === 'savings' && numOper > 5000){
-    dialogue.textContent = 'You can\'t debit more than 3500 at once.';
+    dialogue.textContent = 'You can\'t debit more than 5000 at once.';
     return;
   };
   const result = bank.debit(numOper);
