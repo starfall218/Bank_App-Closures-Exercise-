@@ -1,7 +1,13 @@
 let createName = document.querySelector('.userName');
 const question = document.querySelector('.question');
 const submitBtn = document.querySelector('.submit');
+const acct = document.querySelector('.acct');
 let userName = '';
+let acctType
+acct.addEventListener('click', function(){
+  acctType = localStorage.setItem('Account-Type', acct.value);
+  
+})
 const logName = function(){
   const firstName = createName.value.trim();
   userName = localStorage.setItem('userName', firstName);
