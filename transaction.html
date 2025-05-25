@@ -22,6 +22,7 @@
       height: 93vh;
       flex-direction: column;
       gap: 5px;
+      position: relative;
     }
     .main, .dialogue-box {
       display: flex;
@@ -37,10 +38,23 @@
     a {
       text-decoration: none;
     }
+    .history-icon {
+      width: 34px;
+      display: none;
+    }
+    .history-box {
+      font-size: 0.7rem;
+      width: 40%;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
     .dialogue-box {
       width: 100%;
       flex-direction: column;
-      position: relative;
     }
     .center-box {
       width: 100%;
@@ -49,8 +63,15 @@
     }
     .history {
       display: none;
-      height: 10%;
+      width: 90%;
+      height: max-content;
+      padding: 12px;
+      background-color: rgb(240, 245, 255);
       overflow: scroll;
+    }
+    .previous-acc {
+      padding: 4px;
+      margin-top: 3px;
     }
     .history::-webkit-scrollbar {
       display: none;
@@ -59,8 +80,11 @@
       padding: 10px;
       margin-bottom: 5px;
     }
+    .num-oper {
+      display: none;
+    }
     .button {
-      display: flex;
+      display: none;
       justify-content: center;
       gap: 5px;
       margin-top: 6px;
@@ -97,6 +121,9 @@
       flex-direction: column;
       align-items: center;
     }
+    a {
+      padding: 7px;
+    }
     @media screen and (min-width: 750px) {
       .main {
         width: 50%;
@@ -111,12 +138,19 @@
         flex-direction: row;
         gap: 5px;
       }
+      .history-box {
+        width: 40%;
+      }
     }
   </style>
 </head>
 <body>
   <main>
     <section class="main">
+      <div class="history-box">
+        <svg class="history-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"></path></svg>
+        <div class="history"></div>
+      </div>
       <div class="center-box">
         <div class="dialogue-box">
           <div class="image">
@@ -126,9 +160,9 @@
             <img src="./images/jpg/6927930.jpg" alt="">
           </div>
           <h1 class="dialogue">Hi</h1>
+          <p class="condition-text">Please make a deposit of at least 2000.</p>
         </div>
       </div>
-      <div class="history"></div>
       <div class="input-box">
         <input placeholder="Enter your account balance..." class="balance" required type="text">
       <input placeholder="Enter the amount you need..." class="num-oper" required type="text">
@@ -137,7 +171,7 @@
         <button class="debit">Debit</button>
         <button class="credit">Credit</button>
       </div>
-      <button><a href="./index.html">Log Out</a></button>
+      <button class="log-out"><a href="./index.html">Log Out</a></button>
     </section>
   </main>
   <script src="./js/bnk.js"></script>

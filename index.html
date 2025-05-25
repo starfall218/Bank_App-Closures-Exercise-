@@ -100,6 +100,16 @@
       opacity: 1;
       transition: all 0.15s ease-in-out;
     }
+    .account-select {
+      margin-top: 3px;
+    }
+    select {
+      border: 1px solid gray;
+      padding: 5px;
+    }
+    a {
+      width: 100%;
+    }
     @media screen and (min-width: 700px) {
       .main {
       flex-direction: row;
@@ -139,7 +149,13 @@
         <h1 class="result"></h1>
         <div class="text">
           <input placeholder="Enter your name" class="userName" required type="text">
-    
+        </div>
+        <div class="account-select">
+          <label for="account-type">Account Type</label>
+          <select class="acct" name="account-type" id="account-type" required>
+            <option class="savings" value="Savings">Savings</option>
+            <option class="current" value="Current">Current</option>
+          </select>
         </div>
         <div class="button">
           <button class="submit">Submit</button>
